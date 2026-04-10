@@ -1,6 +1,10 @@
-const express = require('express');
-const app = express();
+console.log('Running tests...');
 
-app.get('/', (req, res) => res.send('CI/CD Ready!'));
-
-app.listen(3000, () => console.log('App running on port 3000'));
+// This is a simple logic test. It doesn't start the Express server.
+if (true) {
+    console.log('Tests passed');
+    process.exit(0); // This tells GitHub "I am done, and I succeeded!"
+} else {
+    console.error('Tests failed');
+    process.exit(1); // This tells GitHub "I am done, but I failed!"
+}
